@@ -10,11 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ballView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        ballView.alpha = 0.5
     }
 
-
+    
+    @IBAction func choiceButton(_ sender: UIButton) {
+        
+        let ballChoices = [#imageLiteral(resourceName: "ball1"), #imageLiteral(resourceName: "ball2"), #imageLiteral(resourceName: "ball3"), #imageLiteral(resourceName: "ball4"), #imageLiteral(resourceName: "ball5")]
+        
+        ballView.image = ballChoices.randomElement()
+        ballView.alpha = 1
+    }
+    
 }
 
